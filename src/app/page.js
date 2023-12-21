@@ -6,6 +6,8 @@ import Testimonials from '@/components/home/testimonials'
 import Cta from '@/components/home/cta'
 import Footer from '@/components/layout/footer'
 import Services from '@/components/home/services'
+import Mission from '@/components/home/mission'
+import Pricing from '@/components/home/pricing'
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Process />
       <Logos />
       <Services />
+      <Mission />
+      <Pricing />
       <Testimonials />
       <Cta />
       <Footer />
