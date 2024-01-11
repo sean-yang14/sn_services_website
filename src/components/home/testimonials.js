@@ -30,7 +30,7 @@ export default function Testimonials() {
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-base sm:text-lg leading-8 text-white font-sans font-light">
                 <p>
-                  “Without Scrub Network&apos;s support I would never have negotiated my contract. I feel better knowing that I&apos;m better protected and didn't leave money on the table.”
+                  “Without Scrub Network&apos;s support I would never have negotiated my contract. I feel better knowing that I&apos;m better protected and didn&apos;t leave money on the table.”
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
