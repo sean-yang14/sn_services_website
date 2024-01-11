@@ -20,7 +20,7 @@ export default function Testimonials() {
                 />
                 <div className="text-sm sm:text-base">
                   <div className="font-semibold text-white">Jessica</div>
-                  <div className="mt-1 text-gray-400">DDS NYU'22</div>
+                  <div className="mt-1 text-gray-400">DDS NYU&apos;22</div>
                 </div>
               </figcaption>
             </figure>
@@ -30,7 +30,7 @@ export default function Testimonials() {
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-base sm:text-lg leading-8 text-white font-sans font-light">
                 <p>
-                  “Without Scrub Network's support I would never have negotiated my contract. I feel better knowing that I'm better protected and didn't leave money on the table.”
+                  “Without Scrub Network&apos;s support I would never have negotiated my contract. I feel better knowing that I&apos;m better protected and didn't leave money on the table.”
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
@@ -41,7 +41,7 @@ export default function Testimonials() {
                 />
                 <div className="text-sm sm:text-base">
                   <div className="font-semibold text-white">Daniel</div>
-                  <div className="mt-1 text-gray-400">DDS NYU'21</div>
+                  <div className="mt-1 text-gray-400">DDS NYU&apos;21</div>
                 </div>
               </figcaption>
             </figure>

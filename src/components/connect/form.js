@@ -510,7 +510,7 @@ export default function Form() {
                   
                   {/* job title question */}
                   <div className='mt-4'>
-                    <p className="font-medium">What's your professional background?</p>
+                    <p className="font-medium">What&apos;s your professional background?</p>
                     <fieldset className="mt-1">
                       <legend className="sr-only">Professional background</legend>
                       <div className="space-y-4 sm:flex sm:items-center sm:space-x-6 sm:space-y-0">

@@ -6,7 +6,7 @@ export default function Exclusive() {
           {/* <p className="text-base font-semibold leading-7 text-indigo-600">Why we do what we do</p> */}
           <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Why partner with us?</h2>
           <p className="mt-6 text-base sm:text-lg leading-8 font-sans font-light">
-            The answer is easy, because our only focus is your success. Recruiting firms, DSO recuriters, and practice owners ultimately care about the employer more than you because that's how they're paid. Recruiting firms limit your exposure to only practices that are willing to pay their fee, which many private practices are not. In contract negotiations DSO recruiters and practice owners are looking to the most employer friendly terms. By partnering with us...
+            The answer is easy, because our only focus is your success. Recruiting firms, DSO recuriters, and practice owners ultimately care about the employer more than you because that&apos;s how they&apos;re paid. Recruiting firms limit your exposure to only practices that are willing to pay their fee, which many private practices are not. In contract negotiations DSO recruiters and practice owners are looking to the most employer friendly terms. By partnering with us...
             
             
           </p>
