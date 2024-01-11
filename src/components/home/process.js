@@ -2,30 +2,30 @@ import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/reac
 
 const features = [
   {
-    name: 'Create Job Search Strategy',
+    name: '',
     description:
-      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
+      "Hit the inquire button. Tell us about the role you're looking for and we'll get to know each other.",
     href: '#',
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'Find Jobs',
+    name: '',
     description:
-      'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
+      "We begin our search for roles that fit your criteria. We'll reach out whenever we find a match. We'll then help you schedule and ace your interviews.",
     href: '#',
     icon: LockClosedIcon,
   },
   {
-    name: 'Get Interviews',
+    name: '',
     description:
-      'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
+      "Once you find a job you like, our team of recruiting and legal experts will help you review and negotiate your contract.",
     href: '#',
     icon: ArrowPathIcon,
   },
   {
-    name: 'Get Job Offers',
+    name: '',
     description:
-      'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
+      "Upon signing an employment contract for your ideal job, you pay a one-time fee of $1,500. If you're a D4 or resident, our services are free.",
     href: '#',
     icon: ArrowPathIcon,
   },
@@ -33,46 +33,29 @@ const features = [
 
 export default function Process() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-background text-font-color py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">TBD</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Scrub Network empowers you to land the job and pay you deserve
+          <h2 className="text-base sm:text-lg font-semibold leading-7">Our Approach</h2>
+          <p className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+            What to expect when you work with us
           </p>
-          {/* <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
-          </p> */}
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+        <div className="mx-auto mt-6 max-w-2xl sm:mt-10 lg:mt-14 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-4">
             {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+              <div key={feature.name} className="flex flex-col py-6 px-8 bg-white">
+                <dt className="flex items-center gap-x-3 text-base sm:text-lg font-semibold leading-7">
+                  <feature.icon className="h-8 w-8 flex-none text-logo" aria-hidden="true" />
                   {feature.name}
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
-                    <a href={feature.href} className="text-sm font-semibold leading-6 text-indigo-600">
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </p>
+                <dd className="mt-4 flex flex-auto flex-col text-sm sm:text-base font-sans font-light leading-7">
+                  <p className="flex-auto">{feature.description}</p>      
                 </dd>
               </div>
             ))}
           </dl>
         </div>
-      </div>
-      <div className='flex  justify-center mt-12'>
-        <button
-          type="button"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Join Scrub Network
-        </button>
       </div>
     </div>
   )

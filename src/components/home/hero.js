@@ -1,45 +1,26 @@
 export default function Hero() {
   return (
-    <div className="relative bg-white">
-      <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 pb-20 pt-8 sm:pb-20 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-24 xl:col-span-6">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <div className="hidden sm:mt-32 sm:flex lg:mt-16">
-              {/* <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Anim aute id magna aliqua ad ad non deserunt sunt.{' '}
-                <a href="#" className="whitespace-nowrap font-semibold text-indigo-600">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Read more <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div> */}
-            </div>
-            <h1 className="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">
-              Find the dental job thats right for you
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              TBD. We help dentists land their ideal jobs. Let our job search strategies and tools help you find the right practice, the right mentor and right pay.
-            </p>
-            <div className="mt-10 flex items-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                View our services
-              </a>
-              <a href="#" className="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
-                Get started
-              </a>
+    <div className="bg-primary flex justify-center pt-5 md:pt-10 h-[60vh]">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Land the dental job that fits your lifestyle</h2>
+        {/* <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">We help you land the dental job that fits your lifestyle</h2> */}
+        <p className="mt-6 text-lg sm:text-xl leading-8 text-gray-300 font-sans font-light">
+          Scrub Network partners with dental professionals in their job search, offerring personalized support from start to finish. Your success is our exclusive focus.
+        </p>
+        <button href="#" type="button" className="transition group relative w-full mt-16 flex justify-center items-center">
+          <div
+          className="z-10 bg-neutral-900 duration-300 group-hover:bg-neutral-950 text-sm sm:text-base font-medium font-sans text-[#d2c0ae] shadow-sm border-[1px] border-logo px-10 py-3 w-1/4 md:w-1/3 lg:w-1/2 rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >
+            Get Connected
+          </div>
+          <div className="duration-300 z-1 shadow-sm bg-[#d2c0ae]  pl-10 pr-4 py-3 w-1/4 md:w-1/3 lg:w-1/2 rounded-md absolute top-1/2 left-1/2 transform -translate-x-[52%] -translate-y-[30%] group-hover:-translate-x-[51.25%] group-hover:-translate-y-[35%]">
+            <div className="text-sm sm:text-base font-medium font-sans text-logo invisible">
+              Filler
             </div>
           </div>
-        </div>
-        <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-          <img
-            className="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
-            src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-            alt=""
-          />
-        </div>
+        </button>
       </div>
     </div>
   )
 }
+

@@ -1,9 +1,9 @@
-import Navbar from "@/components/layout/navbar"
+import Navbar from "@/components/layout/navbar-old"
 
 export default function Template({ children }) {
   return (
     <>
-        <Navbar />
+      {/* <Navbar /> */}
       <div>{children}</div>
     </>
     )

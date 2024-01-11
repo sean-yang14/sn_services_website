@@ -6,22 +6,29 @@ import Testimonials from '@/components/home/testimonials'
 import Cta from '@/components/home/cta'
 import Footer from '@/components/layout/footer'
 import Services from '@/components/home/services'
-import Mission from '@/components/home/mission'
+import Navbar from '@/components/layout/navbar'
 import Pricing from '@/components/home/pricing'
+import Exclusive from '@/components/home/exclusive'
+import Head from 'next/head'
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Process />
-      <Logos />
-      <Services />
-      <Mission />
-      <Pricing />
-      <Testimonials />
-      <Cta />
-      <Footer />
-    </main>
+    <>
+      <Navbar page='main'/>
+      <main className='font-serif'>
+        <Hero />
+        <Exclusive />
+        <Testimonials />
+        <Services />
+        <Logos />
+        <Process />
+        <Pricing />
+        <Cta />
+      </main>
+      <footer className='font-serif'>
+        <Footer />
+      </footer>
+    </>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //  <Hero />
     // </main>
