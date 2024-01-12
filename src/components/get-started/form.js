@@ -853,7 +853,7 @@ export default function Form() {
                         name="other_info"
                         id="other_info"
                         className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
-												placeholder='e.g., patient populations, multi-doc practice, particular procedures'
+												placeholder='e.g., deal breakers, patient populations, length of contract, multi-doc practice, particular procedures'
                         defaultValue={''}
 												onChange={handleChange}
 												value={formData.other_info}
