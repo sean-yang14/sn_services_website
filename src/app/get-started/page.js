@@ -1,9 +1,9 @@
 "use client"
  
-import Form from "@/components/connect/form"
+import Form from "@/components/get-started/form"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
-import Title from "@/components/connect/title"
+import Title from "@/components/get-started/title"
 
 export default function Connect() {
 	return (

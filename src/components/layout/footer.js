@@ -6,7 +6,7 @@ const navigation = {
     // { name: 'Press', href: '#' },
     // { name: 'Partners', href: '#' },
     { name: 'Contact us', href: 'mailto:info@scrubnetwork.com' },
-    { name: 'Connect', href: '/connect' },
+    { name: 'Get Started', href: '/get-started' },
     // { name: 'Contact us', href: 'mailto:info@scrubnetwork.com?subject=Want%20To%20Go%20On%20A%20Job%20Hunting%20Adventure%20Together?' },
   ],
   social: [
@@ -75,19 +75,21 @@ const navigation = {
 }
 
 export default function Footer() {
+
   return (
     <footer className="bg-secondary-background text-font-color">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 pb-12 pt-16 sm:pb-16 sm:pt-20 lg:px-8">
 
         <div class="inline-flex items-center justify-center w-full">
-            <hr class="w-3/4 h-px my-8 bg-divider border-0" />
-            <span class="absolute bg-background px-8 font-bold text-4xl -translate-x-1/2 left-1/2">Scrub Network</span>
+            <hr class="w-full sm:w-3/4 h-px my-12 sm:my-8 bg-divider border-0" />
+            <span class="absolute bg-background px-2 sm:px-8 font-bold text-2xl sm:text-4xl -translate-x-1/2 left-1/2">Scrub Network</span>
         </div>
 
-        <nav className="-mb-6 md:mt-4 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+        {/* previously mobile had columns-2 */}
+        <nav className="-mb-6 md:mt-4 flex justify-center space-x-8 sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a href={item.href} className="text-sm sm:text-base font-semibold leading-6 hover:text-logo transform duration-500">
+              <a href={item.href} className="text-sm sm:text-base font-medium sm:font-semibold leading-6 hover:text-logo transform duration-500">
                 {item.name}
               </a>
             </div>

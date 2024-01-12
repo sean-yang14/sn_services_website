@@ -1,6 +1,7 @@
 import { useState } from'react';
 import axios from'axios';
 import { XMarkIcon, CheckIcon } from'@heroicons/react/24/outline';
+import Success from './success';
 
 export default function Form() {
 	const [validations, setValidations] = useState('');
@@ -19,6 +20,7 @@ export default function Form() {
 		currentLocation:'',
 		phone:'',
 		resume:'',
+		contract:'',
 		background:'',
 		position_type:'',
 		experience_type:'',
@@ -27,6 +29,7 @@ export default function Form() {
 		timeline:'',
 		comp_range:'',
 		employer_types:[],
+		other_employer_response: '',
 		other_info:'',
 		sponsorship:'',
 	});
@@ -48,6 +51,7 @@ export default function Form() {
 				currentLocation:'',
 				phone:'',
 				resume:'',
+				contract:'',
 				background:'',
 				position_type:'',
 				experience_type:'',
@@ -56,6 +60,7 @@ export default function Form() {
 				timeline:'',
 				comp_range:'',
 				employer_types:[],
+				other_employer_response: '',
 				other_info:'',
 				sponsorship:'',
 			});
@@ -123,23 +128,23 @@ export default function Form() {
 			...prev,
 		}));
 
-		// axios({
-		// 	method:'POST',
-		// 	url:'https://formspree.io/f/xqkoqbll',
-		// 	data: formData,
-		// 	headers: {
-		// 		'content-type':'multipart/form-data',
-		// 	},
-		// })
-		// 	.then((response) => {
-		// 		handleServerResponse(
-		// 			true,
-		// 			'Thank you, your message has been submitted'
-		// 		);
-		// 	})
-		// 	.catch((error) => {
-		// 		handleServerResponse(false, error.response.data.error);
-		// 	});
+		axios({
+			method:'POST',
+			url:'https://formspree.io/f/xpzgzvwr',
+			data: formData,
+			headers: {
+				'content-type':'multipart/form-data',
+			},
+		})
+			.then((response) => {
+				handleServerResponse(
+					true,
+					'Thank you, your message has been submitted'
+				);
+			})
+			.catch((error) => {
+				handleServerResponse(false, error.response.data.error);
+			});
 		
 	};
 
@@ -148,7 +153,7 @@ export default function Form() {
 		const droppedFile = e.dataTransfer.files[0];
 		setFormData((prev) => ({
 			...prev,
-			resume: droppedFile,
+			[e.target.name]: droppedFile,
 		}));
 	};
 
@@ -156,7 +161,7 @@ export default function Form() {
 		const selectedFile = e.target.files[0];
 		setFormData((prev) => ({
 			...prev,
-			resume: selectedFile,
+			[e.target.name]: selectedFile,
 		}));
 	};
 
@@ -167,7 +172,7 @@ export default function Form() {
 	const handleCloseClick = (e) => {
 		setFormData((prev) => ({
 			...prev,
-			resume:'',
+			[e.target.name]:'',
 		}));
 	};
 
@@ -177,7 +182,7 @@ export default function Form() {
   ]
 
   const experienceTypes = [
-    { id:'newGrad', title:'D4 or New Grad' },
+    { id:'newGrad', title:'Student / New Grad' },
     { id:'resident', title:'Resident' },
     { id:'experienced', title:'Experienced' },
   ]
@@ -200,51 +205,16 @@ export default function Form() {
 
 	if (status.submitted) {
 		return (
-			<div className='flex min-h-screen justify-center p-4 text-center items-center p-0 font-serif bg-background'>
-				<div className='relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6'>
-					<div>
-						<div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100'>
-							<CheckIcon
-								className='h-6 w-6 text-green-600'
-								aria-hidden='true'
-							/>
-						</div>
-						<div className='mt-3 text-center sm:mt-5'>
-							<h3 className='text-xl font-medium leading-6'>
-								Application Sent
-							</h3>
-							<div className='mt-2'>
-								<p className='text-base'>
-									Thank you for using Scrub Network. We&#39;ll be in touch with
-									next steps soon.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className='mt-5 sm:mt-6'>
-						<button
-							onClick={() =>
-								setStatus((prev) => ({
-									...prev,
-									submitted: false,
-								}))
-							}
-							className='inline-flex w-full justify-center rounded-md border border-transparent bg-logo px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm'
-						>
-							Close
-						</button>
-					</div>
-				</div>
-			</div>
+			<Success />
 		);
 	}
 
 	return (
 		<>
 			<div className='flex-1 font-sans font-light text-sm sm:text-base py-24 sm:pb-32 sm:pt-28 bg-background text-font-color'>
-				<div className='relative mx-auto max-w-5xl md:px-8 xl:px-0'>
+				<div className='relative mx-auto max-w-5xl px-6 lg:px-8'>
 					<div>
-						<div className='px-4 sm:px-6 md:px-0 border-b-2 pb-6 border-primary'>
+						<div className='border-b-2 pb-6 border-primary'>
 							<h1 className='font-serif text-2xl sm:text-3xl font-bold tracking-tight'>
 								Help us learn what you&apos;re looking for.
 							</h1>
@@ -263,7 +233,7 @@ export default function Form() {
 										Interested in setting up a call? (Required)
 									</h3>
                   <div className='mt-1'>
-                    <p>Calls are a great way for us to learn what you&apos;re looking for, but we understand that not everyone is interested. We&apos;ll work in a way that best suits you.</p>
+                    <p>Calls are a great way for us to learn more about you, which in turn helps us during the search process. However, the form will provide the necessary information to kick everything off. </p>
                     <fieldset className="mt-4">
                       <legend className="sr-only">call</legend>
                       <div className="space-y-4 sm:flex sm:items-center sm:space-x-6 sm:space-y-0">
@@ -421,74 +391,159 @@ export default function Form() {
 										</div>
 									</div>
 								</div>
+								
+								<div className='grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6'>
+									{/* resume info */}
+									<div className='pt-8 sm:col-span-3'>
+										<h3 className='font-serif text-lg sm:text-xl font-semibold leading-6'>
+											Add your resume
+										</h3>
 
-                {/* resume info */}
-								<div className='pt-8'>
-									<h3 className='font-serif text-lg sm:text-xl font-semibold leading-6'>
-										Add your resume
-									</h3>
-
-									<div className='mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6'>
-										<div className='sm:col-span-3'>
-											<label
-												htmlFor='resume'
-												className='block'
-											>
-												Resume
-											</label>
-											<div
-												onDrop={handleDrop}
-												onDragOver={handleDragOver}
-												className='mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6'
-											>
-												<div className='space-y-1 text-center'>
-													<svg
-														className='mx-auto h-12 w-12'
-														stroke='currentColor'
-														fill='none'
-														viewBox='0 0 48 48'
-														aria-hidden='true'
-													>
-														<path
-															d='M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02'
-															strokeWidth={2}
-															strokeLinecap='round'
-															strokeLinejoin='round'
-														/>
-													</svg>
-													{formData.resume ? (
-														<div className='flex gap-x-2 items-center'>
-															<p className='text-logo'>
-																{formData.resume.name}
-															</p>
-															<XMarkIcon
-																className='cursor-pointer h-4 w-4 z-10 border-[1px] rounded-full border-gray-700'
-																aria-hidden='true'
-																onClick={handleCloseClick}
+										<div className='mt-4'>
+											<div>
+												<label
+													htmlFor='resume'
+													className='block'
+												>
+													Resume
+												</label>
+												<div
+													onDrop={handleDrop}
+													onDragOver={handleDragOver}
+													className='mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6'
+												>
+													<div className='space-y-1 text-center'>
+														<svg
+															className='mx-auto h-12 w-12'
+															stroke='currentColor'
+															fill='none'
+															viewBox='0 0 48 48'
+															aria-hidden='true'
+														>
+															<path
+																d='M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02'
+																strokeWidth={2}
+																strokeLinecap='round'
+																strokeLinejoin='round'
 															/>
-														</div>
-													) : (
-														<>
-															<div className='flex'>
-																<label className='relative cursor-pointer px-2 rounded-md bg-primary font-medium text-white underline focus-within:outline-none focus-within:ring-2 focus-within:ring-logo focus-within:ring-offset-2 hover:text-logo'>
-																	<span>Upload a file</span>
-																	<input
-																		// required
-																		id='resume'
-																		name='resume'
-																		type='file'
-																		accept='.docx, .doc, .pdf'
-																		className='sr-only'
-																		onChange={handleFileInputChange}
+														</svg>
+														{formData.resume ? (
+															<>
+																<div className='flex gap-x-2 items-center'>
+																	<p className='text-logo'>
+																		{formData.resume.name}
+																	</p>
+																	<XMarkIcon
+																		className='cursor-pointer h-4 w-4 z-10 border-[1px] rounded-full border-gray-700'
+																		aria-hidden='true'
+																		onClick={handleCloseClick}
 																	/>
-																</label>
-																<p className='pl-1'>or drag and drop</p>
-															</div>
-															<p>
-																Use a pdf, docx, or doc
-															</p>
-														</>
-													)}
+																</div>
+																<p className='invisible'>
+																filler line
+																</p>
+															</>
+														) : (
+															<>
+																<div className='flex'>
+																	<label className='relative cursor-pointer px-2 rounded-md bg-primary font-medium text-white underline focus-within:outline-none focus-within:ring-2 focus-within:ring-logo focus-within:ring-offset-2 hover:text-logo'>
+																		<span>Upload a file</span>
+																		<input
+																			// required
+																			id='resume'
+																			name='resume'
+																			type='file'
+																			accept='.docx, .doc, .pdf'
+																			className='sr-only'
+																			onChange={handleFileInputChange}
+																		/>
+																	</label>
+																	<p className='pl-1'>or drag and drop</p>
+																</div>
+																<p>
+																	Use a pdf, docx, or doc
+																</p>
+															</>
+														)}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									{/* contract info */}
+									<div className='pt-8 sm:col-span-3'>
+										<h3 className='font-serif text-lg sm:text-xl font-semibold leading-6'>
+											Add your contract (If available)
+										</h3>
+
+										<div className='mt-4'>
+											<div>
+												<label
+													htmlFor='contract'
+													className='block'
+												>
+													Contract
+												</label>
+												<div
+													onDrop={handleDrop}
+													onDragOver={handleDragOver}
+													className='mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6'
+												>
+													<div className='space-y-1 text-center'>
+														<svg
+															className='mx-auto h-12 w-12'
+															stroke='currentColor'
+															fill='none'
+															viewBox='0 0 48 48'
+															aria-hidden='true'
+														>
+															<path
+																d='M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02'
+																strokeWidth={2}
+																strokeLinecap='round'
+																strokeLinejoin='round'
+															/>
+														</svg>
+														{formData.contract ? (
+															<>
+																<div className='flex gap-x-2 items-center'>
+																	<p className='text-logo'>
+																		{formData.contract.name}
+																	</p>
+																	<XMarkIcon
+																		className='cursor-pointer h-4 w-4 z-10 border-[1px] rounded-full border-gray-700'
+																		aria-hidden='true'
+																		onClick={handleCloseClick}
+																	/>
+																</div>
+																<p className='invisible'>
+																filler line
+																</p>
+															</>
+														) : (
+															<>
+																<div className='flex'>
+																	<label className='relative cursor-pointer px-2 rounded-md bg-primary font-medium text-white underline focus-within:outline-none focus-within:ring-2 focus-within:ring-logo focus-within:ring-offset-2 hover:text-logo'>
+																		<span>Upload a file</span>
+																		<input
+																			// required
+																			id='contract'
+																			name='contract'
+																			type='file'
+																			accept='.docx, .doc, .pdf'
+																			className='sr-only'
+																			onChange={handleFileInputChange}
+																		/>
+																	</label>
+																	<p className='pl-1'>or drag and drop</p>
+																</div>
+																<p>
+																	Use a pdf, docx, or doc
+																</p>
+															</>
+														)}
+													</div>
 												</div>
 											</div>
 										</div>
@@ -508,7 +563,7 @@ export default function Form() {
 										)} */}
 									</div>
                   
-                  {/* job title question */}
+                  {/* background question */}
                   <div className='mt-4'>
                     <p className="font-medium">What&apos;s your professional background?</p>
                     <fieldset className="mt-1">
@@ -583,7 +638,7 @@ export default function Form() {
                     </fieldset>
                   </div>
 
-                  {/* job type question */}
+                  {/* position type question */}
                   <div className='mt-6'>
                     {/* <label className="font-semibold ">Professional Background</label> */}
                     <p className="text-gray-800 font-medium">Position types</p>
@@ -610,79 +665,7 @@ export default function Form() {
                     </fieldset>
                   </div>
 
-                  {/* locations question */}
-                  <div className='mt-6'>
-                    <label htmlFor="location_interests" className="block text-gray-800 font-medium leading-6">
-                      Locations of interest (Please be as specific as possible. Include city, state and distance/time willing to travel)
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        rows={4}
-                        name="location_interests"
-                        id="location_interests"
-                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
-                        defaultValue={''}
-												onChange={handleChange}
-												value={formData.location_interests}
-                      />
-                    </div>
-                  </div>
-
-                  {/* timeline question */}
-                  <div className='mt-6'>
-                    <label htmlFor="timeline" className="block text-gray-800 font-medium leading-6 ">
-                      What is your timeline for landing a job?
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        rows={4}
-                        name="timeline"
-                        id="timeline"
-                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
-                        defaultValue={''}
-												onChange={handleChange}
-												value={formData.timeline}
-                      />
-                    </div>
-                  </div>
-
-                  {/* comp question */}
-                  <div className='mt-6'>
-                    <label htmlFor="comp_range" className="block text-gray-800 font-medium leading-6">
-                      What is your expected compensation range?
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        rows={4}
-                        name="comp_range"
-                        id="comp_range"
-                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
-                        defaultValue={''}
-												onChange={handleChange}
-												value={formData.comp_range}
-                      />
-                    </div>
-                  </div>
-
-                  {/* other question */}
-                  <div className='mt-6'>
-                    <label htmlFor="other_info" className="block text-gray-800 font-medium leading-6">
-                      Anything else that&apos;s important for you?
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        rows={4}
-                        name="other_info"
-                        id="other_info"
-                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
-                        defaultValue={''}
-												onChange={handleChange}
-												value={formData.other_info}
-                      />
-                    </div>
-                  </div>
-
-                  {/* employer type questions */}
+									{/* employer type questions */}
                   <div className='mt-6'>
 										<fieldset>
 											<legend className='sr-only'>employer type question</legend>
@@ -690,7 +673,7 @@ export default function Form() {
 												className='text-gray-800 font-medium'
 												aria-hidden='true'
 											>
-												What types of employers are interested in?
+												What types of employers are you interested in?
 											</div>
 											<div className='mt-1 space-y-3'>
 												<div className='relative flex items-start'>
@@ -781,6 +764,103 @@ export default function Form() {
 										</fieldset>
 									</div>
 
+									{formData.employer_types.includes('other_employer') && (
+										<div className='mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6'>
+											<div className='sm:col-span-3'>
+												<label
+													htmlFor='other_employer_response'
+													className='block text-gray-800'
+												>
+													Other employer(s)
+												</label>
+												<div className='mt-1'>
+													<input
+														type='text'
+														name='other_employer_response'
+														id='other_employer_response'
+														value={formData.other_employer_response}
+														onChange={handleChange}
+														className='block w-full rounded-md border-gray-300 shadow-sm focus:border-logo focus:ring-logo'
+													/>
+												</div>
+											</div>
+										</div>
+									)}
+
+                  {/* locations question */}
+                  <div className='mt-6'>
+                    <label htmlFor="location_interests" className="block text-gray-800 font-medium leading-6">
+                      Locations of interest
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        rows={4}
+                        name="location_interests"
+                        id="location_interests"
+                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
+												placeholder='Please be as specific as possible. Include city, state and distance/time willing to travel'
+                        defaultValue={''}
+												onChange={handleChange}
+												value={formData.location_interests}
+                      />
+                    </div>
+                  </div>
+
+                  {/* timeline question */}
+                  <div className='mt-6'>
+                    <label htmlFor="timeline" className="block text-gray-800 font-medium leading-6 ">
+                      What is your timeline for landing a job?
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        rows={4}
+                        name="timeline"
+                        id="timeline"
+                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
+                        defaultValue={''}
+												onChange={handleChange}
+												value={formData.timeline}
+                      />
+                    </div>
+                  </div>
+
+                  {/* comp question */}
+                  <div className='mt-6'>
+                    <label htmlFor="comp_range" className="block text-gray-800 font-medium leading-6">
+                      What is your expected compensation range?
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        rows={4}
+                        name="comp_range"
+                        id="comp_range"
+                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
+                        defaultValue={''}
+												onChange={handleChange}
+												value={formData.comp_range}
+                      />
+                    </div>
+                  </div>
+
+                  {/* other question */}
+                  <div className='mt-6'>
+                    <label htmlFor="other_info" className="block text-gray-800 font-medium leading-6">
+                      Anything else that&apos;s important for you?
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        rows={4}
+                        name="other_info"
+                        id="other_info"
+                        className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-logo sm:leading-6"
+												placeholder='e.g., patient populations, multi-doc practice, particular procedures'
+                        defaultValue={''}
+												onChange={handleChange}
+												value={formData.other_info}
+                      />
+                    </div>
+                  </div>
+
                   {/* sponsorship question */}
 									<div className='mt-6'>
                     <p className="text-gray-800 font-medium">Will you now or in the future require sponsorship for
@@ -813,14 +893,14 @@ export default function Form() {
 							{/* submit button */}
 							<div className='pt-10 sm:pt-12'>
 								<div className='flex justify-end'>
-									<button type='submit' className="transition group w-full flex items-center relative lg:w-1/2">
+									<button type='submit' className="transition group w-full flex items-center relative sm:w-1/2">
 										
 										<div
-											className="right-0 z-10 bg-neutral-900 duration-300 group-hover:bg-neutral-950 text-sm sm:text-base font-medium font-sans text-[#d2c0ae] shadow-sm border-[1px] border-logo w-1/3 lg:w-1/3 px-6 py-3 rounded-md absolute"
+											className="right-0 z-10 bg-neutral-900 duration-300 group-hover:bg-neutral-950 text-sm sm:text-base font-medium font-sans text-[#d2c0ae] shadow-sm border-[1px] border-logo w-1/3 px-6 py-3 rounded-md absolute"
 										>
 											Submit
 										</div>
-										<div className="duration-300 z-1 shadow-sm bg-[#d2c0ae] py-3 px-6 pr-4 w-1/3 lg:w-1/3 rounded-md absolute right-0 transform -translate-x-[4%] translate-y-[20%] group-hover:-translate-x-[2.25%] group-hover:translate-y-[13%]">
+										<div className="duration-300 z-1 shadow-sm bg-[#d2c0ae] py-3 px-6 pr-4 w-1/3 rounded-md absolute right-0 transform -translate-x-[5%] translate-y-[17%] group-hover:-translate-x-[2%] group-hover:translate-y-[10%]">
 											<div className="text-sm sm:text-base font-medium font-sans text-logo invisible">
 												Filler
 											</div>

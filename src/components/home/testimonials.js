@@ -1,6 +1,5 @@
 export default function Testimonials() {
   return (
-    // <section className="bg-gray-900 py-24 sm:py-32">
     <section className="bg-primary py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -9,13 +8,13 @@ export default function Testimonials() {
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-base sm:text-lg leading-8 text-white font-sans font-light">
                 <p>
-                  “I spent months worrying about finding a job. Then I found Scrub Network. They provided much needed guidance in my job search and took a lot of the busy work off my plate allowing me to focus on completing residency.”
+                  “After months of job search stress, Scrub Network became my saving grace. Their invaluable guidance made my job hunt much smoother and allowed me to concentrate on completing residency.”
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
                 <img
-                  className="h-14 w-14 rounded-full bg-gray-800"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  className="h-14 w-14 rounded-full bg-gray-800 object-cover object-top"
+                  src="/testimonials/jess_headshot.jpg"
                   alt=""
                 />
                 <div className="text-sm sm:text-base">
@@ -30,13 +29,13 @@ export default function Testimonials() {
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-base sm:text-lg leading-8 text-white font-sans font-light">
                 <p>
-                  “Without Scrub Network&apos;s support I would never have negotiated my contract. I feel better knowing that I&apos;m better protected and didn&apos;t leave money on the table.”
+                  “Thanks to Scrub Network, I was able to navigate my contract negotiations successfully. It brings me peace of mind to know that I am better protected, and I can confidently say I am happy with my contract.”
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
                 <img
-                  className="h-14 w-14 rounded-full bg-gray-800"
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  className="h-14 w-14 rounded-full bg-gray-800 object-cover"
+                  src="/testimonials/daniel_headshot.jpg"
                   alt=""
                 />
                 <div className="text-sm sm:text-base">
