@@ -554,7 +554,7 @@ export default function Form() {
 								<div className='pt-8'>
 									<div>
 										<h3 className='font-serif text-lg sm:text-xl font-semibold leading-6'>
-											Job Search Questions
+											Job search questions
 										</h3>
 										{/* {validations && (
 											<h4 className='mt-4 text leading-6 text-red-500 text-sm'>
