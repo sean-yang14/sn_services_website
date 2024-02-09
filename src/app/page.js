@@ -10,6 +10,7 @@ import Navbar from '@/components/layout/navbar'
 import Pricing from '@/components/home/pricing'
 import Exclusive from '@/components/home/exclusive'
 import Head from 'next/head'
+import Story from '@/components/home/story'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Services />
         <Logos />
         <Process />
+        <Story />
         <Pricing />
         <Cta />
       </main>

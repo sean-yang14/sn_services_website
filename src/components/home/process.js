@@ -4,25 +4,25 @@ const features = [
   {
     name: '',
     description:
-      "Hit the 'get started' button. Tell us about the role you're looking for and we'll get to know each other.",
+      "Hit the 'get started' button. Tell us about the roles you're looking for and we'll work together to create a strategy and timeline for getting the right job.",
     number: 1,
   },
   {
     name: '',
     description:
-      "We begin our search for roles that fit your criteria. We'll reach out whenever we find a match. We'll then help you schedule and ace your interviews.",
+      "We then begin tapping into our network and reaching out on your behalf to practices. In parallel, you'll start applying to jobs you find. Once you have a job interview, we prep you to ace it.",
     number: 2,
   },
   {
     name: '',
     description:
-      "Once you find a job you like, our team of recruiting and legal experts will help you review and negotiate your contract.",
+      "After you find a practice you'd like to work at, our team of experts will help you review and negotiate your contract.",
     number: 3,
   },
   {
     name: '',
     description:
-      "Upon signing an employment contract for your ideal job, you pay a one-time fee of $1,500. If you're a D4 or resident, our services are free.",
+      "All that's left is to sign the contract. Congratulations!",
     number: 4,
   },
 ]

@@ -2,9 +2,9 @@ import { HeartIcon, PencilSquareIcon, CursorArrowRaysIcon, DocumentTextIcon, Fac
 
 const services = [
   {
-    name: 'Resume Review',
+    name: 'Personal Research Team',
     description:
-      'Get tailored feedback on your resume.',
+      "Get answers to any questions you have about your career. We've helped dentists navigate H-1B sponsorship, licensure requirements and malpractice insurance.",
     icon: PencilSquareIcon,
   },
   {
@@ -14,9 +14,9 @@ const services = [
     icon: ChatBubbleLeftRightIcon,
   },
   {
-    name: 'Auto Apply',
+    name: 'Applying Made Easier',
     description:
-      "Apply to more jobs in less time. We'll handle applications and practice outreach on your behalf, letting you focus on what really matters in your life.",
+      "Develop a strategy on how and when to apply for jobs. We also provide connections within our network and conduct cold outreaches to practices of interest, increasing your chances of landing the right job.",
     icon: CursorArrowRaysIcon,
   },
   {
@@ -28,7 +28,7 @@ const services = [
   {
     name: 'Contract Review',
     description:
-      "Understand what you're signing. Get the best terms possible and protect yourself for worst case scenarios with our team of recruiting and legal experts.",
+      "Understand what you're signing. Get the best terms possible and protect yourself for worst case scenarios with our team of experts.",
     icon: DocumentTextIcon,
   },
 ]
