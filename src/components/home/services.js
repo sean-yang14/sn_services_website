@@ -19,12 +19,12 @@ const services = [
       "Develop a strategy on how and when to apply for jobs. We also provide connections within our network and conduct cold outreaches to practices of interest, increasing your chances of landing the right job.",
     icon: CursorArrowRaysIcon,
   },
-  {
-    name: 'Culture Check',
-    description:
-      "The team you work with can make or break your associate experience. Make sure you know what you're getting yourself into when you decide to work somewhere.",
-    icon: FaceSmileIcon,
-  },
+  // {
+  //   name: 'Culture Check',
+  //   description:
+  //     "The team you work with can make or break your associate experience. Make sure you know what you're getting yourself into when you decide to work somewhere.",
+  //   icon: FaceSmileIcon,
+  // },
   {
     name: 'Contract Review',
     description:

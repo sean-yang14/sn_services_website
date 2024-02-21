@@ -7,7 +7,7 @@ const tiers = [
     href: '#',
     price: { total: 'Free', annually: 'Free' },
     description: "A premium career support service tailored for you. We want to completely upend HR in dentistry and it starts with providing exceptional value to dentists. That's why we're free.",
-    features: ['Access to all our services', 'Tracker of practices by location', 'Comp comparison', 'Heavily discounted contract review by experts'],
+    features: ['Access to all our services', 'Tracker of practices by location', 'Comp comparison', 'Heavily discounted contract review by experts', 'Negotiation coaching'],
   },
   // {
   //   name: 'For Experienced Professionals',
