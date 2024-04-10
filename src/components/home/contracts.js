@@ -40,7 +40,7 @@ import {
       <div className="bg-background text-font-color py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7">Hard Thing #1</h2>
+            <h2 className="text-base sm:text-lg font-semibold leading-7">Hard Thing #1</h2>
             <p className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Knowing what you should be getting paid</p>
             <p className="mt-6 text-base sm:text-lg leading-8 font-sans font-light">
               We all want to be paid fairly for the work that we do. The problem is that dentists don&apos;t really know what they should be getting paid. Scrub Network wants to provide complete pay transparency in dentistry. That means you understand what contract terms you should be negotiating for and how much money you should be taking home at the end of the day. 

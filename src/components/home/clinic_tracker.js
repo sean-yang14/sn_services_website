@@ -1,17 +1,17 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { RocketLaunchIcon, PhoneArrowUpRightIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
     name: 'Getting started.',
     description:
       "What we need from you is a list of locations you're interested in. It has to at least be at the [city, state] level to get the best results. County names are too broad. You can send the list via email to info@scrubnetwork.com.",
-    icon: CloudArrowUpIcon,
+    icon: RocketLaunchIcon,
     price: "$30 per 25 towns. This is solely to cover data pulling costs. 25 towns will return hundreds of clinics."
   },
   {
     name: 'Auto reaching out.',
     description: "If you need help reaching out, we're here for you. There's a column in the tracker to note if you're interested in a particular clinic. Simply mark 'yes' and let us know to take a look. We'll then reach out to those clinics on your behalf, letting you know of next steps once we hear a response.",
-    icon: LockClosedIcon,
+    icon: PhoneArrowUpRightIcon,
     price: "$50 to reach out to the first 150 clinics. 40 cents per clinic thereafter."
   },
 ]

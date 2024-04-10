@@ -1,23 +1,23 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { RocketLaunchIcon, DocumentTextIcon, PencilIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
     name: 'Getting started.',
     description:
       "What we need from you is the contract you're looking to get benchmarked. You can send the contract via email to info@scrubnetwork.com.",
-    icon: CloudArrowUpIcon,
+    icon: RocketLaunchIcon,
     price: "Free"
   },
   {
     name: 'Contract negotiation.',
     description: "Get paid, not played. Negotiating is hard! We partner with you to provide support, coaching and a second eye to ensure that you truly leave nothing on the table.",
-    icon: LockClosedIcon,
+    icon: DocumentTextIcon,
     price: "Free"
   },
   {
     name: 'Expert contract review and redlining.',
     description: "Understand the ins and outs of your contract by having a lawyer do a full review and breakdown. They'll also rewrite contract terms with the proper legal speak (aka. redlining) - an essential part of negotiating.",
-    icon: LockClosedIcon,
+    icon: PencilIcon,
     price: "Lawyer partner #1 charges $300. Lawyer partner #2 charges $600, which includes additional negotiation assistance. Both rates have been discounted and are best in the market."
   },
 ]

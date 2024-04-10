@@ -1,21 +1,21 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { UserGroupIcon, ArrowDownTrayIcon, FireIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
     name: '7 major DSOs.',
     description:
       'Our database covers 7 of the top DSOs and their affiliated brands. These DSOs are Aspen, Guardian, Smile Brands, Heartland, Sonrova, Pacific Dental Services and Dental Care Alliance.',
-    icon: CloudArrowUpIcon,
+    icon: UserGroupIcon,
   },
   {
     name: 'Downloadable data.',
     description: "We provide an option to download the data as a .csv. Simply hover over the table and a download icon will pop up in the top right corner.",
-    icon: LockClosedIcon,
+    icon: ArrowDownTrayIcon,
   },
   {
     name: 'New features (your feedback requested).',
     description: "We're looking to constantly improve our products so if there's a change you'd like to see, please let us know. If enough people are interested, we're looking to show which DSO clinics have job openings.",
-    icon: ServerIcon,
+    icon: FireIcon,
   },
 ]
 
