@@ -1,12 +1,12 @@
 const navigation = {
   main: [
-    { name: 'Home', href: '/' },
+    // { name: 'Home', href: '/' },
     // { name: 'Blog', href: '#' },
     // { name: 'Jobs', href: '#' },
     // { name: 'Press', href: '#' },
     // { name: 'Partners', href: '#' },
-    { name: 'Contact us', href: 'mailto:info@scrubnetwork.com' },
-    { name: 'Get Started', href: '/get-started' },
+    { name: 'Email us', href: 'mailto:info@scrubnetwork.com' },
+    // { name: 'Get Started', href: '/get-started' },
     // { name: 'Contact us', href: 'mailto:info@scrubnetwork.com?subject=Want%20To%20Go%20On%20A%20Job%20Hunting%20Adventure%20Together?' },
   ],
   social: [
