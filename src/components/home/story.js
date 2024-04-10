@@ -10,7 +10,7 @@ export default function Story() {
               Hey everyone -
             </p>
             <p className="mt-6 text-base sm:text-lg leading-8 font-sans font-light">
-              I'm Sean, founder here at Scrub Network.
+              I&apos;m Sean, founder here at Scrub Network.
             </p>
             <p className="mt-6 text-base sm:text-lg leading-8 font-sans font-light">
               I started this project after seeing the dentists in my life, people I care deeply about, struggle navigating their career post-graduation. It was frustrating to see the same problems pop up over and over again. These weren&apos;t struggles necessary to become a better dentist, yet they often left people questioning whether they made a mistake pursuing a career in dentistry or even worse, questioning their self worth.

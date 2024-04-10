@@ -32,7 +32,7 @@ export default function CompDashboard() {
               {/* <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2> */}
               <p className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Compensation dashboard</p>
               <p className="mt-6 text-base sm:text-lg leading-8 font-light font-sans">
-                We're in the process of launching a website where you can see real compensation data of dentists. Think glassdoor but made specifically for dentistry. This means more accurate salaries (glassdoor is known to under-represent) and a detailed breakdown of compensation contract terms so you know what to be negotiating for. With this product, dentists will now be able to get a precise answer to how much they should be getting paid, based on their specific background.
+                We&apos;re in the process of launching a website where you can see real compensation data of dentists. Think glassdoor but made specifically for dentistry. This means more accurate salaries (glassdoor is known to under-represent) and a detailed breakdown of compensation contract terms so you know what to be negotiating for. With this product, dentists will now be able to get a precise answer to how much they should be getting paid, based on their specific background.
               </p>
               <p className="mt-6 text-base sm:text-lg leading-8 font-light font-sans">
                 While the website hasn&apos;t launched yet, we can still provide a benchmark of compensation terms based on the data that we have. We also offer contract review and negotiation services.
