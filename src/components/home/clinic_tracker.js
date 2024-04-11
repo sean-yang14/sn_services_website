@@ -12,7 +12,7 @@ const features = [
     name: 'Auto reaching out.',
     description: "If you need help reaching out, we're here for you. There's a column in the tracker to note if you're interested in a particular clinic. Simply mark 'yes' and let us know to take a look. We'll then reach out to those clinics on your behalf, letting you know of next steps once we hear a response.",
     icon: PhoneArrowUpRightIcon,
-    price: "$50 to reach out to the first 150 clinics. 40 cents per clinic thereafter."
+    price: "$100"
   },
 ]
 
